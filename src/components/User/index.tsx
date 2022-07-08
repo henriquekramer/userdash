@@ -1,22 +1,18 @@
-import { memo } from "react"
+import { memo, useContext } from "react"
+import { UserContext } from "../../contexts/UserContext"
 import { User as UserType } from '../../types/user'
 import './styles.scss'
 
-interface UserProps extends Omit<UserType, 'birthdate'> {
-  selectedUser: number;
-  setSelectedUser(id: number): void;
-}
-
 function UserComponent({ 
   id,
-  selectedUser,
-  setSelectedUser,
   name, 
   email, 
   address, 
   phone, 
   image, 
-}: UserProps) {
+}: Omit<UserType, 'birthdate'>) {
+  const { selectedUser, setSelectedUser} = useContext(UserContext)
+
   return (
     <li className={selectedUser === id ? 'isActive' : ''} onClick={()=> setSelectedUser(id)}>
       <section className="info">
@@ -29,15 +25,15 @@ function UserComponent({
       </section>
       <aside className="address">
         <div>
-          <span>COUNTRY</span>
+          <span>PAÍS</span>
           {address.country}
         </div>
         <div>
-          <span>STATE</span>
+          <span>ESTADO</span>
           {address.state}
         </div>
         <div>
-          <span>STREET</span>
+          <span>ENDEREÇO</span>
           {address.street}
         </div>
       </aside>
