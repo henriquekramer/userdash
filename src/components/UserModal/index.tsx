@@ -4,7 +4,12 @@ import { IoClose, IoCheckmark } from 'react-icons/io5'
 import './styles.scss'
 
 export function UserModal(){
-  const {setIsOpenModal, selectedUser, updateUser, createUser, formName,
+  const {
+    setIsOpenModal, 
+    selectedUser, 
+    updateUser, 
+    createUser, 
+    formName,
     setFormName,
     formEmail, 
     setFormEmail,
