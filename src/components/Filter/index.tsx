@@ -4,11 +4,15 @@ import './styles.scss';
 
 export function Filter() {
   const [filter, setFilter] = useState('')
-  const { filterUsers } = useContext(UserContext)
+  const { filterUsers, setIsOpenModal } = useContext(UserContext)
 
   async function handleSubmit(event: FormEvent){
     event.preventDefault();
     filterUsers(filter)
+  }
+
+  function handleCreate(){
+    setIsOpenModal(true)
   }
 
   return (
@@ -21,6 +25,7 @@ export function Filter() {
       />
       &nbsp;
       <button type="submit">Filtrar</button>
+      <button type="button" onClick={handleCreate}>Criar</button>
     </form>
   );
 }
