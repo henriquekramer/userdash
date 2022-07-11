@@ -5,6 +5,7 @@ function HeaderComponent(){
   return (
     <header>
       <h1>UserDash</h1>
+      <h1>Novo Título</h1>
     </header>
   )
 }
