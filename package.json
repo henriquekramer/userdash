@@ -9,12 +9,14 @@
     "server": "json-server -d 1000 -w -p 3333 ./server.js"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.5",
     "axios": "^0.27.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.33.1",
     "react-icons": "^4.4.0",
-    "sass": "^1.53.0"
+    "sass": "^1.53.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",

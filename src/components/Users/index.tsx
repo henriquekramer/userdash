@@ -10,9 +10,13 @@ function UsersComponent(){
     filterUsers('');
   }, [])
 
+  if (!users) {
+    return <h1>Carregando...</h1>;
+  }
+
   return (
     <ul>
-      {users.map(user => (
+      {users?.map(user => (
         <User
           key={user.id}
           id={user.id}
