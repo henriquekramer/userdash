@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
+import { toast } from "react-toastify";
 import { UserModal } from "../components/UserModal";
 import { api } from "../services/fakeapi";
 import { User, UserFormData } from "../types/user";
@@ -51,6 +52,8 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     };
 
     await api.post('./users', user);
+    toast.success('Usuário criado com sucesso!');
+
   }
 
   const updateUser = async (data : UserFormData) => {
@@ -69,11 +72,13 @@ export const UserContextProvider = ({ children }: UserContextProps) => {
     };
 
     await api.put(`/users/${selectedUser}`, user);
+    toast.success('Usuário atualizado com sucesso!');
   }
 
   const deleteUser = async() => {
     await api.delete(`/users/${selectedUser}`)
-    window.location.reload();
+    toast.success('Usuário deletado com sucesso!');
+    // window.location.reload();
   }
 
   return (
