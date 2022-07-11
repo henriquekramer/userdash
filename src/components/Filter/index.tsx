@@ -1,18 +1,19 @@
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import './styles.scss';
 
 export function Filter() {
-  const [filter, setFilter] = useState('')
+
   const { 
-    filterUsers, 
     setIsOpenModal, 
-    setSelectedUser
+    setSelectedUser,
+    filter,
+    setFilter,
   } = useContext(UserContext)
 
   async function handleSubmit(event: FormEvent){
     event.preventDefault();
-    filterUsers(filter)
+    
   }
 
   function handleCreate(){
